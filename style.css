@@ -1,0 +1,136 @@
+/* Previous styles remain the same */
+
+/* Toast Notifications */
+.toast {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 0.375rem;
+    color: white;
+    opacity: 0;
+    transform: translateY(-1rem);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.toast.success {
+    background-color: #059669;
+}
+
+.toast.error {
+    background-color: #dc2626;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Auth Forms */
+.auth-container {
+    min-height: 100vh;
+    padding-top: 5rem;
+    background-color: var(--orange-50);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.auth-form {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 28rem;
+    margin: 2rem;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-header .icon-container {
+    background-color: var(--orange-50);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.auth-header .icon-container i {
+    color: var(--orange-600);
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.auth-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gray-900);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--orange-500);
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--orange-600);
+    color: var(--white);
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.auth-form button:hover {
+    background-color: var(--orange-700);
+}
+
+.auth-form .auth-link {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--gray-600);
+    font-size: 0.875rem;
+}
+
+.auth-form .auth-link a {
+    color: var(--orange-600);
+    text-decoration: none;
+}
+
+.auth-form .auth-link a:hover {
+    color: var(--orange-700);
+}

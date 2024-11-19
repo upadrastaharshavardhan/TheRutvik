@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Rutvik</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            color: white;
+            margin: 0;
+        }
+
+        .nav-links a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: orange; /* Button color */
+            color: white; /* Text color */
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px; /* Rounded corners */
+            margin: 5px; /* Space between buttons */
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .nav-links a:hover {
+            background-color: darkorange; /* Hover effect */
+            transform: scale(1.05); /* Slightly enlarge button on hover */
+        }
+
+        .nav-links a:active {
+            background-color: #e67e22; /* Active button color */
+            transform: scale(0.95); /* Slightly shrink button on click */
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: orange; /* Button color */
+            color: white; /* Text color */
+            font-size: 16px;
+            border-radius: 5px; /* Rounded corners */
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .nav-button:hover {
+            background-color: darkorange;
+            transform: scale(1.05);
+        }
+
+        .nav-button:active {
+            background-color: #e67e22;
+            transform: scale(0.95);
+        }
+
+        .auth-container {
+            padding: 20px;
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .auth-header .icon-container {
+            font-size: 48px;
+            color: orange;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-group p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo">
+                    <h1>रुत्विक्</h1>
+                </div>
+                <div class="nav-links desktop-only">
+                    <a href="home.html">Home</a>
+                    <a href="https://upadrastaharshavardhan.github.io/rutvikservices/">Services</a>
+                    <a href="https://upadrastaharshavardhan.github.io/rutvik_login/">Muhurtam</a>
+                    <a href="https://formfacade.com/public/109484607677686887914/home/form/1FAIpQLSetOaZuhGUbQ32Qs558iCYokqhsdz5I1znf9YLNhYt2nUpc3A/">Join in RUTVIK</a>
+                    <a href="#samagri">Samagri</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <button onclick="logout()" class="nav-button">
+                    <i data-lucide="log-out"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="auth-container">
+        <div class="auth-form">
+            <div class="auth-header">
+                <div class="icon-container">
+                    <i data-lucide="user"></i>
+                </div>
+                <h2>Welcome to Your Dashboard</h2>
+            </div>
+            <div id="userInfo"></div>
+        </div>
+    </div>
+
+    <script>
+        // Display user info
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (currentUser) {
+            const userInfo = document.getElementById('userInfo');
+            userInfo.innerHTML = `
+                <div class="form-group">
+                    <label>Name</label>
+                    <p>${currentUser.name}</p>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <p>${currentUser.email}</p>
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <p>${currentUser.phone}</p>
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <p>${currentUser.city}</p>
+                </div>
+            `;
+        }
+
+        // Logout function
+        function logout() {
+            if (confirm("Are you sure you want to logout?")) {
+                localStorage.removeItem('currentUser');
+                window.location.href = "index.html"; // Redirect to login page
+            }
+        }
+    </script>
+</body>
+</html>
